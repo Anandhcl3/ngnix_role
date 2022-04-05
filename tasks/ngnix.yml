@@ -1,9 +1,9 @@
 ---
   
-- hosts: all
+- hosts: web
   become: true
   tasks:
-  - name: Install nginx
+  - name: Install httpd
     yum:
       name: httpd
       state: present
@@ -13,7 +13,7 @@
       src: index.html
       dest: /var/www/html/
 
-  - name: Start NGiNX
+  - name: Start httpd service
     service:
       name: httpd
       state: restarted

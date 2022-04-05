@@ -1,2 +1,5 @@
 ---
 # tasks file for ngnix_role
+
+- include_tasks: ngnix.yml
+
