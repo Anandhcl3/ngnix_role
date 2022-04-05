@@ -1,0 +1,21 @@
+---
+  
+- hosts: all
+  become: true
+  tasks:
+  - name: Install nginx
+    yum:
+      name: httpd
+      state: present
+
+  - name: Insert Index Page
+    template:
+      src: index.html
+      dest: /var/www/html/
+
+  - name: Start NGiNX
+    service:
+      name: httpd
+      state: restarted
+    tags:
+     - install
