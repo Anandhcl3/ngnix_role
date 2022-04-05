@@ -1,8 +1,5 @@
 ---
   
-- hosts: web
-  become: true
-  tasks:
   - name: Install httpd
     yum:
       name: httpd
@@ -17,5 +14,3 @@
     service:
       name: httpd
       state: restarted
-    tags:
-     - install
